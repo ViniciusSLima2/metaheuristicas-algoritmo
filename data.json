@@ -1,0 +1,44 @@
+{
+    "data": {
+      "João": {
+        "capacity": 100,
+        "resourceByProject": {
+          "1": 20,
+          "2": 30,
+          "3": 40
+        }
+      },
+      "Maria": {
+        "capacity": 20,
+        "resourceByProject": {
+          "1": 50,
+          "2": 20,
+          "4": 60
+        }
+      },
+      "Carlos": {
+        "capacity": 94,
+        "resourceByProject": {
+          "2": 100,
+          "3": 200,
+          "5": 150
+        }
+      },
+      "Ana": {
+        "capacity": 112,
+        "resourceByProject": {
+          "1": 40,
+          "3": 70,
+          "4": 60
+        }
+      },
+      "Fernanda": {
+        "capacity": 143,
+        "resourceByProject": {
+          "2": 80,
+          "4": 90,
+          "5": 50
+        }
+      }
+    }
+  }
