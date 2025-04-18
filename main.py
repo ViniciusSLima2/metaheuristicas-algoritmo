@@ -1,5 +1,6 @@
 import json
 from collections import defaultdict
+import matplotlib.pyplot as plt
 
 jsonFile = open("data.json", "r", encoding="utf-8")
 data = json.loads(jsonFile.read())
@@ -30,8 +31,31 @@ def assignProfessionalToProject(orderedCostByProjectJSON, professionalsCapacity)
                 break
     return assignedProfessionalToProject
 
+def plotResult(result):
+    rows = [[project_id, person] for project_id, person in result.items()]
+
+    # Cria a figura e o eixo
+    fig, ax = plt.subplots()
+    ax.axis('off')
+    ax.axis('tight')
+
+    # Cabeçalhos da tabela
+    columns = ["Projeto ID", "Pessoa"]
+
+    # Cria a tabela
+    table = ax.table(cellText=rows, colLabels=columns, loc='center', cellLoc='center')
+
+    # Estética
+    table.auto_set_font_size(False)
+    table.set_fontsize(12)
+    table.scale(1.2, 1.5)
+
+    plt.title("Responsáveis por Projeto", pad=20)
+    plt.show()
+
 costByProjectJSON, professionalsCapacity = createCostByProjectJSON()
 orderedCostByProjectJSON = orderCostByProjectJSONByCost(costByProjectJSON)
 result = assignProfessionalToProject(orderedCostByProjectJSON, professionalsCapacity)
+plotResult(result)
 
-print(result)
+
